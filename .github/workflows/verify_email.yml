@@ -1,25 +1,22 @@
 name: Verify Email Step
 
 on:
-
-Triggers the workflow when code is pushed to the 'main' branch
-push:
-branches:
-- main
-
-Allows manual triggering from the GitHub Actions tab
-workflow_dispatch:
+  # Trigger the workflow when code is pushed to 'main'
+  push:
+    branches:
+      - main
+  # Allows manual triggering from GitHub Actions tab
+  workflow_dispatch:
 
 jobs:
-verify_step_name:
-runs-on: ubuntu-latest
-steps:
-# Step 1: Checkout the repository code
-- uses: actions/checkout@v4
+  verify_step_name:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository code
+      - uses: actions/checkout@v4
 
-  # Step 2: The required step with your email address as the name
-  - name: 24f2001081@ds.study.iitm.ac.in
-    run: |
-      echo "GitHub Action Step Name Verification Complete."
-      echo "Email step name confirmed."
-      echo "This action will be the most recent action run."
+      # Step 2: Step with your email as the name
+      - name: "24f2001081@ds.study.iitm.ac.in"
+        run: |
+          echo "GitHub Action Step Name Verification Complete."
+          echo "Email step name confirmed."
